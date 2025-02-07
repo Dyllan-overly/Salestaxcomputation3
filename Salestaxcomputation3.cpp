@@ -1,20 +1,42 @@
-// Salestaxcomputation3.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+/* Program file name: 
+ Programmer: Dyllan Overly
+ Date: February 2025
+ Requirements:
+ Write a program that can compute total sales tax of:
+ 95$ with a 4%sales tax and a 2% country sales tax
+*/
 #include <iostream>
-
+using namespace std;
 int main()
 {
-    std::cout << "Hello World!\n";
+	float tax2 = .02;
+	float tax = 0.04;
+	string item;
+	float price;
+	//added item to make it more like computing at a store
+	cout << " please enter the name of the first item \n";
+	cin >> item;
+	cout << " please enter the price for the first item \n";
+	cin >> price;
+	float subtotal = 0;
+	float countrytax = 0;
+	float saletax = 0;
+	float grandtotal = 0;
+	float grandestotal = 0;
+
+
+	subtotal = price;
+	saletax = subtotal * tax;
+	grandtotal = subtotal + saletax;
+	countrytax = subtotal * tax2;
+	grandestotal = grandtotal + countrytax;
+
+	cout << "my shopping list \n";
+	cout << "================\n";
+
+	cout << item << "     " << "$" << price << endl;
+	cout << "Total: " << grandestotal << endl;
+	cout << "Tax: " << saletax << endl;
+	cout << "tax2: " << countrytax << endl;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
